@@ -1,0 +1,8 @@
+cls：命令清除命令
+copy source dest：文件的复制
+type nul > blank_file：文件的创建
+copy nul > blank_file：文件的创建
+move source dest:移动文件
+ren oldname newname:文件重命名
+del/erase target：删除文件
+dir：查看当前目下的文件
