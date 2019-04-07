@@ -1,0 +1,46 @@
+pragma solidity >=0.4.22 <0.6.0;
+contract Voting {
+
+  bytes32[]candidates = new bytes32[](5);
+  mapping (bytes32 => uint) candidatesVotingCount;
+  constructor(bytes32[] memory _candidates)public{
+
+      for(uint i = 0; i<_candidates.length; i++){
+        candidates[i]  = _candidates[i];
+      }
+  }
+
+  function votingToPerson(bytes32 person)public {
+    assert(isValidToPerson(person));
+    candidatesVotingCount[person] += 1;
+  }
+
+
+  function votingTotalToPerson(bytes32 person)public view returns (uint) {
+    assert(isValidToPerson(person));
+    return candidatesVotingCount[person];
+  }
+
+  function isValidToPerson(bytes32 person)public view returns (bool) {
+
+    for(uint i = 0; i<candidates.length; i++){
+      if(candidates[i]==person){
+        return true;
+      }
+    }
+
+    return false;
+  }
+}
+//["zhh","mayun","zhangbozhi","Liudehua","lwl"]
+
+
+
+
+
+
+
+
+
+
+//web3安装问题
