@@ -6,3 +6,4 @@ move source dest:移动文件
 ren oldname newname:文件重命名
 del/erase target：删除文件
 dir：查看当前目下的文件
+md test:新建test文件夹
